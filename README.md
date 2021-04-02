@@ -12,7 +12,7 @@ Output in test2_out.txt.
 
 ### Test 3:
 Write a function using RcppArmadillo that computes the proximal operator for SLOPE using Algorithm 3 (FastProxSL1) from Bogdan et al 2015 (SLOPE: adaptive variable selection via convex optimization). Compare the result with `SLOPE:::prox_sorted_L1()` (observe that this function uses a different algorithm than the one you are supposed to implement)  
-THe output from both functions is the same. SLOPE:::prox_sorted_L1() takes 0.02 seconds for the task whereas the FastProxSL1 implementation takes 1.96 seconds.
+The output from both functions is the same. SLOPE:::prox_sorted_L1() takes 0.02 seconds for the task whereas the FastProxSL1 implementation takes 1.96 seconds. [Reference](https://github.com/jolars/SLOPE/blob/master/src/prox.h)
 
 ### Test 4:
 Medium: Submit a pull request that fixes the issue at https://github.com/jolars/SLOPE/issues/10.  
