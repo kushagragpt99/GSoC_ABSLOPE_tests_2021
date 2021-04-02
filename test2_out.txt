@@ -1,0 +1,178 @@
+Updating SLOPE documentation
+Loading SLOPE
+Exports from F:/rcpp_prac/slope_package/SLOPE/src/SLOPE.cpp:
+   Rcpp::List sparseSLOPE(arma::sp_mat x, arma::mat y, const Rcpp::List control)
+   Rcpp::List denseSLOPE(arma::mat x, arma::mat y, const Rcpp::List control)
+
+Exports from F:/rcpp_prac/slope_package/SLOPE/src/r-exports.cpp:
+   arma::mat sorted_l1_prox(const arma::mat& x, const arma::vec& lambda)
+
+F:/rcpp_prac/slope_package/SLOPE/src/RcppExports.cpp updated.
+F:/rcpp_prac/slope_package/SLOPE/R/RcppExports.R updated.
+Re-compiling SLOPE
+-  installing *source* package 'SLOPE' ... (423ms)
+   ** using staged installation
+   ** libs
+   "C:/rtools40/mingw64/bin/"g++  -std=gnu++11 -I"C:/PROGRA~1/R/R-40~1.2/include" -DNDEBUG  -I'C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include' -I'C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include'        -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign -UNDEBUG -Wall -pedantic -g -O0 -fdiagnostics-color=always -c RcppExports.cpp -o RcppExports.o
+Error in process_get_error_connection(self, private) : 
+  stderr is not a pipe.
+Type .Last.error.trace to see where the error occured
+> out = devtools::check('../slope_package/SLOPE')
+Updating SLOPE documentation
+Loading SLOPE
+Exports from F:/rcpp_prac/slope_package/SLOPE/src/SLOPE.cpp:
+   Rcpp::List sparseSLOPE(arma::sp_mat x, arma::mat y, const Rcpp::List control)
+   Rcpp::List denseSLOPE(arma::mat x, arma::mat y, const Rcpp::List control)
+
+Exports from F:/rcpp_prac/slope_package/SLOPE/src/r-exports.cpp:
+   arma::mat sorted_l1_prox(const arma::mat& x, const arma::vec& lambda)
+
+F:/rcpp_prac/slope_package/SLOPE/src/RcppExports.cpp updated.
+F:/rcpp_prac/slope_package/SLOPE/R/RcppExports.R updated.
+Re-compiling SLOPE
+-  installing *source* package 'SLOPE' ... (404ms)
+   ** using staged installation
+   ** libs
+   "C:/rtools40/mingw64/bin/"g++  -std=gnu++11 -I"C:/PROGRA~1/R/R-40~1.2/include" -DNDEBUG  -I'C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include' -I'C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include'        -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign -UNDEBUG -Wall -pedantic -g -O0 -fdiagnostics-color=always -c RcppExports.cpp -o RcppExports.o
+   C:/rtools40/mingw64/bin/g++ -shared -s -static-libgcc -o SLOPE.dll tmp.def RcppExports.o SLOPE.o r-exports.o -LC:/PROGRA~1/R/R-40~1.2/bin/x64 -lRlapack -LC:/PROGRA~1/R/R-40~1.2/bin/x64 -lRblas -lgfortran -lm -lquadmath -LC:/PROGRA~1/R/R-40~1.2/bin/x64 -lR
+   installing to C:/Users/glaedur/AppData/Local/Temp/Rtmp4WIQZn/devtools_install_3ae0354f398c/00LOCK-SLOPE/00new/SLOPE/libs/x64
+-  DONE (SLOPE)
+Warning: 
+-- Conflicts ------------------------------------------------ SLOPE conflicts --
+x t() masks SLOPE::t()
+
+Did you accidentally source a file rather than using `load_all()`?
+Run `rm(list = c("t"))` to remove the conflicts.
+Writing NAMESPACE
+Writing NAMESPACE
+-- Building ----------------------------------------------------------- SLOPE --
+Setting env vars:
+* CFLAGS    : -Wall -pedantic -fdiagnostics-color=always
+* CXXFLAGS  : -Wall -pedantic -fdiagnostics-color=always
+* CXX11FLAGS: -Wall -pedantic -fdiagnostics-color=always
+--------------------------------------------------------------------------------
+√  checking for file 'F:\rcpp_prac\slope_package\SLOPE/DESCRIPTION' (407ms)
+-  preparing 'SLOPE': (1.1s)
+√  checking DESCRIPTION meta-information ... 
+-  cleaning src
+-  installing the package to process help pages
+-  saving partial Rd database (49.8s)
+√  creating vignettes (19.6s)
+-  cleaning src
+-  checking for LF line-endings in source and make files and shell scripts
+-  checking for empty or unneeded directories
+-  building 'SLOPE_0.3.3.tar.gz'
+   
+-- Checking ----------------------------------------------------------- SLOPE --
+Setting env vars:
+* _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
+* _R_CHECK_CRAN_INCOMING_       : FALSE
+* _R_CHECK_FORCE_SUGGESTS_      : FALSE
+* NOT_CRAN                      : true
+-- R CMD check ---------------------------------------------------------------------------------------------------
+-  using log directory 'C:/Users/glaedur/AppData/Local/Temp/Rtmp4WIQZn/SLOPE.Rcheck' (443ms)
+-  using R version 4.0.2 (2020-06-22)
+-  using platform: x86_64-w64-mingw32 (64-bit)
+-  using session charset: ISO8859-1
+-  using options '--no-manual --as-cran' (489ms)
+√  checking for file 'SLOPE/DESCRIPTION'
+-  this is package 'SLOPE' version '0.3.3'
+-  package encoding: UTF-8
+√  checking package namespace information ...
+N  checking package dependencies (17.8s)
+   Package suggested but not available for checking: 'spelling'
+√  checking if this is a source package ... 
+√  checking if there is a namespace
+√  checking for executable files (1.2s)
+√  checking for hidden files and directories ... 
+√  checking for portable file names ... 
+√  checking serialization versions ... 
+√  checking whether package 'SLOPE' can be installed (52.5s)
+√  checking installed package size ... 
+√  checking package directory (615ms)
+√  checking for future file timestamps (1.6s)
+√  checking 'build' directory ...
+√  checking DESCRIPTION meta-information (400ms)
+√  checking top-level files ...
+√  checking for left-over files ... 
+√  checking index information (347ms)
+√  checking package subdirectories (607ms)
+√  checking R files for non-ASCII characters ... 
+√  checking R files for syntax errors ... 
+√  checking whether the package can be loaded (1.6s)
+√  checking whether the package can be loaded with stated dependencies (1.3s)
+√  checking whether the package can be unloaded cleanly (1.2s)
+√  checking whether the namespace can be loaded with stated dependencies (1.2s)
+√  checking whether the namespace can be unloaded cleanly (1.6s)
+√  checking loading without being on the library search path (1.4s)
+√  checking dependencies in R code (1.5s)
+√  checking S3 generic/method consistency (2s)
+√  checking replacement functions (1.3s)
+√  checking foreign function calls (1.4s)
+√  checking R code for possible problems (8.2s)
+√  checking Rd files (564ms)
+√  checking Rd metadata ... 
+√  checking Rd line widths ... 
+√  checking Rd cross-references (347ms)
+√  checking for missing documentation entries (1.5s)
+√  checking for code/documentation mismatches (4s)
+W  checking Rd \usage sections (455ms)
+   Undocumented arguments in documentation object 'coef.SLOPE'
+     'only_nonzeros'
+   
+   Functions with \usage entries need to have the appropriate \alias
+   entries, and all their arguments documented.
+   The \usage entries must correspond to syntactically valid R code.
+   See chapter 'Writing R documentation files' in the 'Writing R
+   Extensions' manual.
+√  checking Rd contents (2.2s)
+√  checking for unstated dependencies in examples (348ms)
+√  checking contents of 'data' directory ... 
+√  checking data for non-ASCII characters (1.3s)
+√  checking data for ASCII and uncompressed saves (350ms)
+√  checking line endings in C/C++/Fortran sources/headers ... 
+√  checking line endings in Makefiles ...
+√  checking compilation flags in Makevars (1.1s)
+√  checking for GNU extensions in Makefiles
+√  checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS)
+√  checking use of PKG_*FLAGS in Makefiles ... 
+√  checking use of SHLIB_OPENMP_*FLAGS in Makefiles ... 
+√  checking pragmas in C/C++ headers and code ... 
+√  checking compilation flags used ...
+√  checking compiled code (25.9s)
+    WARNING
+   'qpdf' is needed for checks on size reduction of PDFs
+√  checking installed files from 'inst/doc' ... 
+√  checking files in 'vignettes' ... 
+√  checking examples (12.2s)
+√  checking for unstated dependencies in 'tests' ... 
+-  checking tests ...
+√  Running 'spelling.R'
+√  Running 'testthat.R' [27s] (27.6s)
+√  checking for unstated dependencies in vignettes (28s)
+√  checking package vignettes in 'inst/doc' ... 
+√  checking re-building of vignette outputs (19s)
+√  checking for non-standard things in the check directory
+√  checking for detritus in the temp directory ...
+
+-- R CMD check results -------------------------------------------------------------------------- SLOPE 0.3.3 ----
+Duration: 3m 18.4s
+
+> checking Rd \usage sections ... WARNING
+  Undocumented arguments in documentation object 'coef.SLOPE'
+    'only_nonzeros'
+  
+  Functions with \usage entries need to have the appropriate \alias
+  entries, and all their arguments documented.
+  The \usage entries must correspond to syntactically valid R code.
+  See chapter 'Writing R documentation files' in the 'Writing R
+  Extensions' manual.
+
+> checking compiled code ... OK
+   WARNING
+  'qpdf' is needed for checks on size reduction of PDFs
+
+> checking package dependencies ... NOTE
+  Package suggested but not available for checking: 'spelling'
+
+0 errors √ | 2 warnings x | 1 note x

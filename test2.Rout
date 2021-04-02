@@ -1,0 +1,332 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> set.seed(10)
+> 
+> devtools::check('../slope_package/SLOPE')
+Error in get(genname, envir = envir) : object 'testthat_print' not found
+Updating SLOPE documentation
+ℹ Loading SLOPE
+Exports from /mnt/f/rcpp_prac/slope_package/SLOPE/src/SLOPE.cpp:
+   Rcpp::List sparseSLOPE(arma::sp_mat x, arma::mat y, const Rcpp::List control)
+   Rcpp::List denseSLOPE(arma::mat x, arma::mat y, const Rcpp::List control)
+
+Exports from /mnt/f/rcpp_prac/slope_package/SLOPE/src/r-exports.cpp:
+   arma::mat sorted_l1_prox(const arma::mat& x, const arma::vec& lambda)
+
+/mnt/f/rcpp_prac/slope_package/SLOPE/src/RcppExports.cpp updated.
+/mnt/f/rcpp_prac/slope_package/SLOPE/R/RcppExports.R updated.
+Re-compiling SLOPE
+  ─  installing *source* package ‘SLOPE’ ... (594ms)
+     ** using staged installation
+     ** libs
+     g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/home/glaedur/R/x86_64-pc-linux-gnu-library/3.6/Rcpp/include" -I"/home/glaedur/R/x86_64-pc-linux-gnu-library/3.6/RcppArmadillo/include"   -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -UNDEBUG -Wall -pedantic -g -O0 -c RcppExports.cpp -o RcppExports.o
+     g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o SLOPE.so RcppExports.o SLOPE.o r-exports.o -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+     SLOPE.o: In function `std::abs(double)':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:170: multiple definition of `dataptr(SEXPREC*)::fun'
+RcppExports.o:(.bss._ZZ7dataptrP7SEXPRECE3fun[_ZZ7dataptrP7SEXPRECE3fun]+0x0     RcppExports.o:(.bss._ZZ7dataptrP7SEXPRECE3fun[_ZZ7dataptrP7SEXPRECE3fun]+0x0): first defined here
+   SLOPE.o: In function `snprintf':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:16: multiple definition of `guard variable for dataptr(SEXPREC*)::fun'
+   RcppExports.o:/home/glaedur/R/x86_64-pc-linux-gnu-library/3.6/RcppArmadillo/include/RcppArmadilloAs.h:96: first defined here
+   SLOPE.o: In function `snprintf':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:16: multiple definition of `std::ostream& arma::arma_cerr_stream<char>(std::ostream*)::cerr_stream'
+   RcppExports.o:/home/glaedur/R/x86_64-pc-linux-gnu-library/3.6/RcppArmadillo/include/RcppArmadilloAs.h:96: first defined here
+   SLOPE.o: In function `snprintf':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:16: multiple definition of `arma::Datum<double>::nan'
+   RcppExports.o:/home/glaedur/R/x86_64-pc-linux-gnu-library/3.6/RcppArmadillo/include/RcppArmadilloAs.h:96: first defined here
+   SLOPE.o: In function `snprintf':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:16: multiple definition of `arma::Datum<int>::nan'
+   RcppExports.o:/home/glaedur/R/x86_64-pc-linux-gnu-library/3.6/RcppArmadillo/include/RcppArmadilloAs.h:96: first defined here
+   SLOPE.o: In function `snprintf':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:16: multiple definition of `guard variable for arma::Datum<int>::nan'
+   RcppExports.o:/home/glaedur/R/x86_64-pc-linux-gnu-library/3.6/RcppArmadillo/include/RcppArmadilloAs.h:96: first defined here
+SLOPE.o: In function `snprintf'     SLOPE.o: In function `snprintf':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:16: multiple definition of `guard variable for arma::Datum<double>::nan'
+   RcppExports.o:/home/glaedur/R/x86_64-pc-linux-gnu-library/3.6/RcppArmadillo/include/RcppArmadilloAs.h:96: first defined here
+   SLOPE.o: In function `snprintf':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/x86_64-w64-mingw32/include/stdio.h:343: undefined reference to `__mingw_vsnprintf'
+   SLOPE.o: In function `trunc_log<double>':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/fn_trunc_log.hpp:37: undefined reference to `log'
+   SLOPE.o: In function `trunc_exp<double>':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/fn_trunc_exp.hpp:35: undefined reference to `exp'
+   SLOPE.o: In function `tinyformat::detail::formatTruncated(std::ostream&, char const*, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/utils/tinyformat/tinyformat.h:288: undefined reference to `std::ostream::write(char const*, long long)'
+   SLOPE.o: In function `tinyformat::detail::printFormatStringLiteral(std::ostream&, char const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/utils/tinyformat/tinyformat.h:568: undefined reference to `std::ostream::write(char const*, long long)'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/utils/tinyformat/tinyformat.h:571: undefined reference to `std::ostream::write(char const*, long long)'
+   SLOPE.o: In function `tinyformat::detail::formatImpl(std::ostream&, char const*, tinyformat::detail::FormatArg const*, int)':
+F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/utils/tinyformat/tinyformat.h:825: undefined reference to `std::__cxx11::bas     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/utils/tinyformat/tinyformat.h:825: undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator[](unsigned long long)'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/utils/tinyformat/tinyformat.h:825: undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator[](unsigned long long)'
+   SLOPE.o: In function `Rcpp::Rcpp_PreserveObject(SEXPREC*)':
+F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/RcppCommon.h:91: undefined reference      F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/RcppCommon.h:91: undefined reference to `__imp_R_NilValue'
+   SLOPE.o: In function `Rcpp::Rcpp_ReleaseObject(SEXPREC*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/RcppCommon.h:98: undefined reference to `__imp_R_NilValue'
+   SLOPE.o: In function `Rcpp::Rcpp_protect(SEXPREC*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/protection/Shield.h:24: undefined reference to `__imp_R_NilValue'
+   SLOPE.o: In function `SEXPREC* Rcpp::internal::r_true_cast<16>(SEXPREC*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/r_cast.h:118: undefined reference to `__imp_R_GlobalEnv'
+   SLOPE.o: In function `arma::lapack::laenv(int*, char*, char*, int*, int*, int*, int*, unsigned long long, unsigned long long)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:1247: undefined reference to `ilaenv_'
+   SLOPE.o: In function `double arma::arma_hypot<double>(double, double)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/arma_cmath.hpp:239: undefined reference to `hypot'
+   SLOPE.o: In function `Rcpp::Rcpp_eval(SEXPREC*, SEXPREC*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/api/meat/Rcpp_eval.h:78: undefined reference to `__imp_R_BaseNamespace'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/api/meat/Rcpp_eval.h:80: undefined reference to `__imp_R_UnboundValue'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/api/meat/Rcpp_eval.h:92: undefined reference to `__imp_R_BaseEnv'
+F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/api/meat/Rcpp_e     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/api/meat/Rcpp_eval.h:101: undefined reference to `__imp_R_BaseEnv'
+   SLOPE.o: In function `__gnu_cxx::__enable_if<std::__is_integer<unsigned int>::__value, double>::__type std::sqrt<unsigned int>(unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/cmath:476: undefined reference to `sqrt'
+   SLOPE.o: In function `Rcpp::Shield<SEXPREC*>::~Shield()':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/protection/Shield.h:39: undefined reference to `__imp_R_NilValue'
+   SLOPE.o: In function `Rcpp::PreserveStorage<Rcpp::Vector<19, Rcpp::PreserveStorage> >::~PreserveStorage()':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/storage/PreserveStorage.h:14: undefined reference to `__imp_R_NilValue'
+   SLOPE.o: In function `Results Family::FISTAImpl<arma::SpMat<double> >(arma::SpMat<double> const&, arma::Mat<double> const&, arma::Mat<double>, arma::Col<double>)':
+   F:\rcpp_prac\slope_package\SLOPE\src/families/family.h:84: undefined reference to `___chkstk_ms'
+   F:\rcpp_prac\slope_package\SLOPE\src/families/family.h:220: undefined reference to `sqrt'
+   SLOPE.o: In function `Results Family::FISTAImpl<arma::Mat<double> >(arma::Mat<double> const&, arma::Mat<double> const&, arma::Mat<double>, arma::Col<double>)':
+   F:\rcpp_prac\slope_package\SLOPE\src/families/family.h:84: undefined reference to `___chkstk_ms'
+F:\rcpp_prac\slope_package\SLOPE     F:\rcpp_prac\slope_package\SLOPE\src/families/family.h:220: undefined reference to `sqrt'
+   SLOPE.o: In function `__gnu_cxx::__promote_2<double, int, __gnu_cxx::__promote<double, std::__is_integer<double>::__value>::__type, __gnu_cxx::__promote<int, std::__is_integer<int>::__value>::__type>::__type std::pow<double, int>(double, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/cmath:418: undefined reference to `pow'
+   SLOPE.o: In function `Results Gaussian::ADMMImpl<arma::Mat<double> >(arma::Mat<double> const&, arma::Mat<double> const&, arma::Mat<double>, arma::Col<double>&, arma::Col<double>&, arma::Mat<double> const&, arma::Mat<double> const&, arma::Col<double> const&, arma::Col<double>, double)':
+   F:\rcpp_prac\slope_package\SLOPE\src/families/gaussian.h:71: undefined reference to `___chkstk_ms'
+   SLOPE.o: In function `Results Gaussian::ADMMImpl<arma::SpMat<double> >(arma::SpMat<double> const&, arma::Mat<double> const&, arma::Mat<double>, arma::Col<double>&, arma::Col<double>&, arma::Mat<double> const&, arma::Mat<double> const&, arma::Col<double> const&, arma::Col<double>, double)':
+   F:\rcpp_prac\slope_package\SLOPE\src/families/gaussian.h:71: undefined reference to `___chkstk_ms'
+   SLOPE.o: In function `arma::enable_if2<arma::is_arma_type<arma::subview_col<double> >::value&&arma::resolves_to_vector<arma::subview_col<double> >::yes, arma::subview_col<double>::pod_type>::result arma::stddev<arma::subview_col<double> >(arma::subview_col<double> const&, unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/fn_stddev.hpp:35: undefined reference to `sqrt'
+   SLOPE.o: In function `Rcpp::Vector<19, Rcpp::PreserveStorage> cppSLOPE<arma::SpMat<double> >(arma::SpMat<double>&, arma::Mat<double>&, Rcpp::Vector<19, Rcpp::PreserveStorage>)':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:16: undefined reference to `___chkstk_ms'
+SLOPE.o: In function `Rcpp::Vector<19, Rcpp::PreserveStorage> cppSLOPE<arm     SLOPE.o: In function `Rcpp::Vector<19, Rcpp::PreserveStorage> cppSLOPE<arma::Mat<double> >(arma::Mat<double>&, arma::Mat<double>&, Rcpp::Vector<19, Rcpp::PreserveStorage>)':
+   F:\rcpp_prac\slope_package\SLOPE\src/SLOPE.cpp:16: undefined reference to `___chkstk_ms'
+   SLOPE.o: In function `Rcpp::PreserveStorage<Rcpp::Vector<19, Rcpp::PreserveStorage> >::PreserveStorage()':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/storage/PreserveStorage.h:10: undefined reference to `__imp_R_NilValue'
+   SLOPE.o: In function `arma::eGlue<arma::Mat<double>, arma::Mat<double>, arma::eglue_minus>::pod_type arma::op_norm::vec_norm_2<arma::eGlue<arma::Mat<double>, arma::Mat<double>, arma::eglue_minus> >(arma::Proxy<arma::eGlue<arma::Mat<double>, arma::Mat<double>, arma::eglue_minus> > const&, arma::arma_not_cx<arma::eGlue<arma::Mat<double>, arma::Mat<double>, arma::eglue_minus>::elem_type>::result const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:395: undefined reference to `sqrt'
+   SLOPE.o: In function `arma::eGlue<arma::Mat<double>, arma::Mat<double>, arma::eglue_minus>::pod_type arma::op_norm::vec_norm_k<arma::eGlue<arma::Mat<double>, arma::Mat<double>, arma::eglue_minus> >(arma::Proxy<arma::eGlue<arma::Mat<double>, arma::Mat<double>, arma::eglue_minus> > const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741: undefined reference to `pow'
+   SLOPE.o: In function `arma::Mat<double>::pod_type arma::op_norm::vec_norm_k<arma::Mat<double> >(arma::Proxy<arma::Mat<double> > const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741: undefined reference to `pow'
+   SLOPE.o: In function `arma::arma_real_only<double>::result arma::eop_aux::lgamma<double>(double)':
+F:\rcpp_prac\slope_package\SLOPE\src/C:/U     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:126: undefined reference to `lgamma'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:126: undefined reference to `lgamma'
+F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:126: undefined reference to `lgamma'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:126: undefined reference to `lgamma'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:126: undefined reference to `lgamma'
+   SLOPE.o:F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:126: more undefined references to `lgamma' follow
+   SLOPE.o: In function `arma::subview_col<double>::pod_type arma::op_norm::vec_norm_k<arma::subview_col<double> >(arma::Proxy<arma::subview_col<double> > const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741: undefined reference to `pow'
+   SLOPE.o: In function `arma::Col<double>::pod_type arma::op_norm::vec_norm_k<arma::Col<double> >(arma::Proxy<arma::Col<double> > const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741: undefined reference to `pow'
+   SLOPE.o: In function `arma::SpSubview_col<double>::pod_type arma::op_norm::mat_norm_2<arma::SpSubview_col<double> >(arma::SpProxy<arma::SpSubview_col<double> > const&, arma::arma_real_only<arma::SpSubview_col<double>::elem_type>::result const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:963: undefined reference to `sqrt'
+SLOPE.o: In function `arma::SpToDOp<arma::SpSubview_col<double>, arma::op_sp_minus_post>::pod_type arma::op_norm::vec_norm_k<arma::SpToDOp<arma::SpSubview_col<double>, arma::op_sp_minus_post> >(arma::Proxy<arma::SpToDOp<arma::SpSubview_col<double>, arma::op_sp_mi     SLOPE.o: In function `arma::SpToDOp<arma::SpSubview_col<double>, arma::op_sp_minus_post>::pod_type arma::op_norm::vec_norm_k<arma::SpToDOp<arma::SpSubview_col<double>, arma::op_sp_minus_post> >(arma::Proxy<arma::SpToDOp<arma::SpSubview_col<double>, arma::op_sp_minus_post> > const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741: undefined reference to `pow'
+   SLOPE.o: In function `__gnu_cxx::__enable_if<std::__is_integer<int>::__value, double>::__type std::sqrt<int>(int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/cmath:476: undefined reference to `sqrt'
+   SLOPE.o: In function `void regularizationPath<arma::SpMat<double> >(arma::Col<double>&, arma::Col<double>&, double&, arma::SpMat<double> const&, arma::Mat<double> const&, arma::Row<double> const&, arma::Row<double> const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool)':
+   F:\rcpp_prac\slope_package\SLOPE\src/regularizationPath.h:43: undefined reference to `sqrt'
+   F:\rcpp_prac\slope_package\SLOPE\src/regularizationPath.h:60: undefined reference to `log'
+   F:\rcpp_prac\slope_package\SLOPE\src/regularizationPath.h:60: undefined reference to `log'
+   SLOPE.o: In function `std::unique_ptr<Family, std::default_delete<Family> > setupFamily<bool, bool, unsigned int, double, double, double, double, double, unsigned int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, bool, unsigned int, double, double, double, double, double, unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/families/families.h:20: undefined reference to `operator new(unsigned long long)'
+   F:\rcpp_prac\slope_package\SLOPE\src/families/families.h:22: undefined reference to `operator new(unsigned long long)'
+   F:\rcpp_prac\slope_package\SLOPE\src/families/families.h:25: undefined reference to `operator new(unsigned long long)'
+F:\rcpp_prac\slope_pac     F:\rcpp_prac\slope_package\SLOPE\src/families/families.h:27: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `arma::Cube<double>::slice(unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/Cube_meat.hpp:1035: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `void regularizationPath<arma::Mat<double> >(arma::Col<double>&, arma::Col<double>&, double&, arma::Mat<double> const&, arma::Mat<double> const&, arma::Row<double> const&, arma::Row<double> const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool)':
+F:\rcpp_prac\slope_package\SLOPE\src/regularizationPath.h:43: undefined reference      F:\rcpp_prac\slope_package\SLOPE\src/regularizationPath.h:43: undefined reference to `sqrt'
+   F:\rcpp_prac\slope_package\SLOPE\src/regularizationPath.h:60: undefined reference to `log'
+   F:\rcpp_prac\slope_package\SLOPE\src/regularizationPath.h:60: undefined reference to `log'
+   SLOPE.o: In function `arma::MapMat<double>::init_cold()':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/MapMat_meat.hpp:747: undefined reference to `operator new(unsigned long long, std::nothrow_t const&)'
+   SLOPE.o: In function `arma::Cube<double>::create_mat()':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/Cube_meat.hpp:454: undefined reference to `operator new[](unsigned long long, std::nothrow_t const&)'
+   SLOPE.o: In function `arma::subview_elem2<double, arma::Mat<unsigned int>, arma::Mat<unsigned int> >::extract(arma::Mat<double>&, arma::subview_elem2<double, arma::Mat<unsigned int>, arma::Mat<unsigned int> > const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/subview_elem2_meat.hpp:684: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `arma::unwrap_check_mixed<arma::Mat<unsigned int> >::unwrap_check_mixed<double>(arma::Mat<unsigned int> const&, arma::Mat<double> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap.hpp:1020: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `arma::unwrap_check<arma::Mat<double> >::unwrap_check(arma::Mat<double> const&, bool)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap.hpp:886: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `double arma::blas::asum<double>(unsigned int, double const*)':
+F:\rcpp_prac\slope_package\SLOPE\src/C:/     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_blas.hpp:219: undefined reference to `dasum_'
+   SLOPE.o: In function `double arma::blas::nrm2<double>(unsigned int, double const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_blas.hpp:249: undefined reference to `dnrm2_'
+   SLOPE.o: In function `double arma::op_norm::vec_norm_2_direct_robust<double>(arma::Mat<double> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:683: undefined reference to `sqrt'
+   SLOPE.o: In function `arma::eGlue<arma::Mat<double>, arma::Col<double>, arma::eglue_minus>::pod_type arma::op_norm::vec_norm_2<arma::eGlue<arma::Mat<double>, arma::Col<double>, arma::eglue_minus> >(arma::Proxy<arma::eGlue<arma::Mat<double>, arma::Col<double>, arma::eglue_minus> > const&, arma::arma_not_cx<arma::eGlue<arma::Mat<double>, arma::Col<double>, arma::eglue_minus>::elem_type>::result const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:395: undefined reference to `sqrt'
+   SLOPE.o: In function `arma::eGlue<arma::Mat<double>, arma::Col<double>, arma::eglue_minus>::pod_type arma::op_norm::vec_norm_k<arma::eGlue<arma::Mat<double>, arma::Col<double>, arma::eglue_minus> >(arma::Proxy<arma::eGlue<arma::Mat<double>, arma::Col<double>, arma::eglue_minus> > const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741: undefined reference to `pow'
+SLOPE.o: In function `arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>, arma::eop_scalar_times>::pod_type arma::op_norm::vec_norm_2<arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>,     SLOPE.o: In function `arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>, arma::eop_scalar_times>::pod_type arma::op_norm::vec_norm_2<arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>, arma::eop_scalar_times> >(arma::Proxy<arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>, arma::eop_scalar_times> > const&, arma::arma_not_cx<arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>, arma::eop_scalar_times>::elem_type>::result const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:395: undefined reference to `sqrt'
+   SLOPE.o: In function `arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>, arma::eop_scalar_times>::pod_type arma::op_norm::vec_norm_k<arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>, arma::eop_scalar_times> >(arma::Proxy<arma::eOp<arma::eGlue<arma::Col<double>, arma::Col<double>, arma::eglue_minus>, arma::eop_scalar_times> > const&, int)':
+F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741:     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741: undefined reference to `pow'
+   SLOPE.o: In function `arma::eOp<arma::Col<double>, arma::eop_scalar_times>::pod_type arma::op_norm::vec_norm_2<arma::eOp<arma::Col<double>, arma::eop_scalar_times> >(arma::Proxy<arma::eOp<arma::Col<double>, arma::eop_scalar_times> > const&, arma::arma_not_cx<arma::eOp<arma::Col<double>, arma::eop_scalar_times>::elem_type>::result const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:395: undefined reference to `sqrt'
+   SLOPE.o: In function `arma::eOp<arma::Col<double>, arma::eop_scalar_times>::pod_type arma::op_norm::vec_norm_k<arma::eOp<arma::Col<double>, arma::eop_scalar_times> >(arma::Proxy<arma::eOp<arma::Col<double>, arma::eop_scalar_times> > const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:741: undefined reference to `pow'
+   SLOPE.o: In function `arma::arma_real_or_cx_only<double>::result arma::eop_aux::exp<double>(double)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+SLOPE.o:F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/     SLOPE.o:F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: more undefined references to `exp' follow
+   SLOPE.o: In function `double arma::blas::dot<double>(unsigned int, double const*, double const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_blas.hpp:167: undefined reference to `ddot_'
+   SLOPE.o: In function `arma::unwrap_check_mixed<arma::Mat<unsigned int> >::unwrap_check_mixed<unsigned int>(arma::Mat<unsigned int> const&, arma::Mat<unsigned int> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap.hpp:1020: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `arma::unwrap_check<arma::Mat<unsigned int> >::unwrap_check(arma::Mat<unsigned int> const&, bool)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap.hpp:886: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `arma::subview_field<arma::Col<unsigned int> >::extract(arma::field<arma::Col<unsigned int> >&, arma::subview_field<arma::Col<unsigned int> > const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/subview_field_meat.hpp:515: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `Rcpp::PreserveStorage<Rcpp::RObject_Impl<Rcpp::PreserveStorage> >::~PreserveStorage()':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/storage/PreserveStorage.h:14: undefined reference to `__imp_R_NilValue'
+   SLOPE.o: In function `arma::subview_elem1<double, arma::Mat<unsigned int> >::extract(arma::Mat<double>&, arma::subview_elem1<double, arma::Mat<unsigned int> > const&)':
+F:\rcpp_prac\slope_package\SLOPE     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/subview_elem1_meat.hpp:775: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `double arma::op_norm::vec_norm_2_direct_mem<double>(unsigned int, double const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_norm_meat.hpp:618: undefined reference to `sqrt'
+   SLOPE.o: In function `void arma::blas::gemv<double>(char const*, int const*, int const*, double const*, double const*, int const*, double const*, int const*, double const*, double*, int const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_blas.hpp:36: undefined reference to `dgemv_'
+   SLOPE.o: In function `Rcpp::Vector<19, Rcpp::PreserveStorage>::offset(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/vector/Vector.h:312: undefined reference to `__imp_R_NamesSymbol'
+   SLOPE.o: In function `arma::field<arma::Col<unsigned int> >::init(unsigned int, unsigned int, unsigned int)':
+F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/field_meat.hpp:1959: undefined reference to `operator new[](unsigned long long,     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/field_meat.hpp:1959: undefined reference to `operator new[](unsigned long long, std::nothrow_t const&)'
+   SLOPE.o: In function `void arma::lapack::syev<double>(char*, char*, int*, double*, int*, double*, double*, int*, int*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:180: undefined reference to `dsyev_'
+   SLOPE.o: In function `arma::unwrap_check<arma::Mat<double> >::unwrap_check(arma::Mat<double> const&, arma::Mat<double> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap.hpp:878: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `arma::subview_elem1<unsigned int, arma::Mat<unsigned int> >::extract(arma::Mat<unsigned int>&, arma::subview_elem1<unsigned int, arma::Mat<unsigned int> > const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/subview_elem1_meat.hpp:775: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `Rcpp::PreserveStorage<Rcpp::RObject_Impl<Rcpp::PreserveStorage> >::PreserveStorage()':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/storage/PreserveStorage.h:10: undefined reference to `__imp_R_NilValue'
+   SLOPE.o: In function `__gnu_cxx::new_allocator<int>::allocate(unsigned long long, void const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long long)'
+SLOPE.o: In function `bool arma::auxlib::solve_approx_svd<arma::Glue<arma::Mat<double>, arma::Mat<double>, arma::glue_solve_tri_default> >(arma::Mat<arma::Glue<arma::Mat<double>, arma::Mat<double>, arma::glue_solve_tri_default>::pod_type>&, arma::Mat<arma::Glue<arma::Mat<double>, arma::Mat<double>, arma::glue_solve_tri_default>::pod_type>&, arma::Base<arma::Glue<arma::Mat<double>, arma::M     SLOPE.o: In function `bool arma::auxlib::solve_approx_svd<arma::Glue<arma::Mat<double>, arma::Mat<double>, arma::glue_solve_tri_default> >(arma::Mat<arma::Glue<arma::Mat<double>, arma::Mat<double>, arma::glue_solve_tri_default>::pod_type>&, arma::Mat<arma::Glue<arma::Mat<double>, arma::Mat<double>, arma::glue_solve_tri_default>::pod_type>&, arma::Base<arma::Glue<arma::Mat<double>, arma::Mat<double>, arma::glue_solve_tri_default>::pod_type, arma::Glue<arma::Mat<double>, arma::Mat<double>, arma::glue_solve_tri_default> > const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/auxlib_meat.hpp:5425: undefined reference to `log'
+   SLOPE.o: In function `arma::arma_real_or_cx_only<double>::result arma::eop_aux::exp<double>(double)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: undefined reference to `exp'
+   SLOPE.o:F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:66: more undefined references to `exp' follow
+   SLOPE.o: In function `arma::field<arma::Col<unsigned int> >::create_objects()':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/field_meat.hpp:2001: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `__gnu_cxx::new_allocator<double>::allocate(unsigned long long, void const*)':
+F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `opera     F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > arma::arma_str::str<int>(arma::arma_str::basic_format<arma::arma_str::format, int> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/arma_str.hpp:107: undefined reference to `operator new[](unsigned long long)'
+   SLOPE.o: In function `void arma::lapack::gesdd<double>(char*, int*, int*, double*, int*, double*, double*, int*, double*, int*, double*, int*, int*, int*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:524: undefined reference to `dgesdd_'
+   SLOPE.o: In function `void arma::lapack::trtrs<double>(char*, char*, char*, int*, int*, double const*, int*, double*, int*, int*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:725: undefined reference to `dtrtrs_'
+   SLOPE.o: In function `void arma::lapack::gelsd<double>(int*, int*, int*, double*, int*, double*, int*, double*, double*, int*, double*, int*, int*, int*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:696: undefined reference to `dgelsd_'
+SLOPE.o: In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > arma::arma_str::str<unsigned int, unsigned int, unsigned int, unsigned int>(arma::     SLOPE.o: In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > arma::arma_str::str<unsigned int, unsigned int, unsigned int, unsigned int>(arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::format, unsigned int>, unsigned int>, unsigned int>, unsigned int> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/arma_str.hpp:269: undefined reference to `operator new[](unsigned long long)'
+   SLOPE.o: In function `arma::newarp::SymEigsSolver<double, 0, arma::newarp::SparseGenMatProd<double> >::SymEigsSolver(arma::newarp::SparseGenMatProd<double> const&, unsigned int, unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/newarp_SymEigsSolver_meat.hpp:322: undefined reference to `pow'
+   SLOPE.o: In function `arma::newarp::SymEigsSolver<double, 4, arma::newarp::SparseGenMatProd<double> >::SymEigsSolver(arma::newarp::SparseGenMatProd<double> const&, unsigned int, unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/newarp_SymEigsSolver_meat.hpp:322: undefined reference to `pow'
+   SLOPE.o: In function `arma::newarp::SymEigsSolver<double, 3, arma::newarp::SparseGenMatProd<double> >::SymEigsSolver(arma::newarp::SparseGenMatProd<double> const&, unsigned int, unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/newarp_SymEigsSolver_meat.hpp:322: undefined reference to `pow'
+   SLOPE.o: In function `arma::newarp::SymEigsSolver<double, 7, arma::newarp::SparseGenMatProd<double> >::SymEigsSolver(arma::newarp::SparseGenMatProd<double> const&, unsigned int, unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/newarp_SymEigsSolver_meat.hpp:322: undefined reference to `pow'
+SLOPE.o: In function `void arma::op_stddev::app     SLOPE.o: In function `void arma::op_stddev::apply<arma::Mat<double> >(arma::Mat<arma::Mat<double>::pod_type>&, arma::mtOp<arma::Mat<double>::pod_type, arma::Mat<double>, arma::op_stddev> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_stddev_meat.hpp:59: undefined reference to `sqrt'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/op_stddev_meat.hpp:81: undefined reference to `sqrt'
+   SLOPE.o: In function `void arma::lapack::potrf<double>(char*, int*, double*, int*, int*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:317: undefined reference to `dpotrf_'
+   SLOPE.o: In function `__gnu_cxx::new_allocator<std::vector<double, std::allocator<double> > >::allocate(unsigned long long, void const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `__gnu_cxx::new_allocator<std::vector<unsigned int, std::allocator<unsigned int> > >::allocate(unsigned long long, void const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `__gnu_cxx::new_allocator<unsigned int>::allocate(unsigned long long, void const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long long)'
+SLOPE.o: In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > arma::arma_str::str<unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>(arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::ba     SLOPE.o: In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > arma::arma_str::str<unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>(arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::basic_format<arma::arma_str::format, unsigned int>, unsigned int>, unsigned int>, unsigned int>, unsigned int>, unsigned int> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/arma_str.hpp:377: undefined reference to `operator new[](unsigned long long)'
+   SLOPE.o: In function `void arma::lapack::trcon<double>(char*, char*, char*, int*, double const*, int*, double*, double*, int*, int*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:1175: undefined reference to `dtrcon_'
+   SLOPE.o: In function `void arma::lapack::larnv<double>(int*, int*, int const*, double*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:1314: undefined reference to `dlarnv_'
+   SLOPE.o: In function `arma::arma_integral_only<unsigned int>::result arma::eop_aux::sqrt<unsigned int>(unsigned int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:52: undefined reference to `sqrt'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:52: undefined reference to `sqrt'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:52: undefined reference to `sqrt'
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/eop_aux.hpp:52: undefined reference to `sqrt'
+   SLOPE.o: In function `arma::unwrap_check_mixed<arma::Mat<double> >::unwrap_check_mixed<double>(arma::Mat<double> const&, arma::Mat<double> const&)':
+F:\rcpp_prac\slope_package\SLOPE\     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap.hpp:1020: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `void arma::lapack::pbtrf<double>(char*, int*, int*, double*, int*, int*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:361: undefined reference to `dpbtrf_'
+   SLOPE.o: In function `void tinyformat::detail::formatTruncated<int>(std::ostream&, int const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/utils/tinyformat/tinyformat.h:276: undefined reference to `std::ostream::write(char const*, long long)'
+   SLOPE.o: In function `bool arma::auxlib::solve_approx_svd<arma::Mat<double> >(arma::Mat<arma::Mat<double>::pod_type>&, arma::Mat<arma::Mat<double>::pod_type>&, arma::Base<arma::Mat<double>::pod_type, arma::Mat<double> > const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/auxlib_meat.hpp:5425: undefined reference to `log'
+   SLOPE.o: In function `arma::unwrap_cube_check<arma::Cube<double> >::unwrap_cube_check(arma::Cube<double> const&, bool)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap_cube.hpp:108: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `void arma::blas::gemm<double>(char const*, char const*, int const*, int const*, int const*, double const*, double const*, int const*, double const*, int const*, double const*, double*, int const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_blas.hpp:62: undefined reference to `dgemm_'
+SLOPE.o: In function `void arma::blas::syrk<double>(char const*, char const*, int const*,      SLOPE.o: In function `void arma::blas::syrk<double>(char const*, char const*, int const*, int const*, double const*, double const*, int const*, double const*, double*, int const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_blas.hpp:88: undefined reference to `dsyrk_'
+   SLOPE.o: In function `arma::partial_unwrap_check<arma::Mat<double> >::partial_unwrap_check(arma::Mat<double> const&, arma::Mat<double> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap.hpp:2278: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `arma::partial_unwrap_check<arma::Col<double> >::partial_unwrap_check(arma::Col<double> const&, arma::Mat<double> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/unwrap.hpp:2346: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `void arma::lapack::stedc<double>(char*, int*, double*, double*, double*, int*, double*, int*, int*, int*, int*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/translate_lapack.hpp:1279: undefined reference to `dstedc_'
+   SLOPE.o: In function `__gnu_cxx::new_allocator<arma::arma_sort_index_packet<double> >::allocate(unsigned long long, void const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > arma::arma_str::str<char>(arma::arma_str::basic_format<arma::arma_str::format, char> const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/arma_str.hpp:107: undefined reference to `operator new[](unsigned long long)'
+SLOPE.o: In f     SLOPE.o: In function `bool arma::auxlib::solve_approx_svd<arma::Glue<arma::Mat<double>, arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times>, arma::glue_solve_tri_default> >(arma::Mat<arma::Glue<arma::Mat<double>, arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times>, arma::glue_solve_tri_default>::pod_type>&, arma::Mat<arma::Glue<arma::Mat<double>, arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times>, arma::glue_solve_tri_default>::pod_type>&, arma::Base<arma::Glue<arma::Mat<double>, arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times>, arma::glue_solve_tri_default>::pod_type, arma::Glue<arma::Mat<double>, arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times>, arma::glue_solve_tri_default> > const&)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/auxlib_meat.hpp:5425: undefined reference to `log'
+   SLOPE.o: In function `__gnu_cxx::new_allocator<unsigned long>::allocate(unsigned long long, void const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long long)'
+   SLOPE.o: In function `void tinyformat::detail::formatTruncated<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::ostream&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/Rcpp/include/Rcpp/utils/tinyformat/tinyformat.h:276: undefined reference to `std::ostream::write(char const*, long long)'
+   SLOPE.o: In function `__gnu_cxx::new_allocator<std::pair<double, unsigned int> >::allocate(unsigned long long, void const*)':
+   F:\rcpp_prac\slope_package\SLOPE\src/C:/rtools40/mingw64/include/c++/8.3.0/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long long)'
+SLOPE.o: In function `bool arma::auxl     SLOPE.o: In function `bool arma::auxlib::solve_approx_svd<arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times> >(arma::Mat<arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times>::pod_type>&, arma::Mat<arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times>::pod_type>&, arma::Base<arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times>::pod_type, arma::Glue<arma::Mat<double>, arma::Col<double>, arma::glue_times> > const&)':
+F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/     F:\rcpp_prac\slope_package\SLOPE\src/C:/Users/glaedur/OneDrive/Documents/R/win-library/4.0/RcppArmadillo/include/armadillo_bits/auxlib_meat.hpp:5425: undefined reference to `log'
+   SLOPE.o:SLOPE.cpp:(.xdata+0x54): undefined reference to `__gxx_personality_seh0'
+   SLOPE.o:SLOPE.cpp:(.xdata+0x84): undefined reference to `__gxx_personality_seh0'
+   SLOPE.o:SLOPE.cpp:(.xdata+0xac): undefined reference to `__gxx_personality_seh0'
+   SLOPE.o:SLOPE.cpp:(.xdata+0xd4): undefined reference to `__gxx_personality_seh0'
+   SLOPE.o:SLOPE.cpp:(.xdata+0xf8): undefined reference to `__gxx_personality_seh0'
+   SLOPE.o:SLOPE.cpp:(.xdata+0x130): more undefined references to `__gxx_personality_seh0' follow
+   SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb0EEE[_ZTVN4Rcpp10RstreambufILb0EEE]+0x28): undefined reference to `std::basic_streambuf<char, std::char_traits<char> >::setbuf(char*, long long)'
+   SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb0EEE[_ZTVN4Rcpp10RstreambufILb0EEE]+0x30): undefined reference to `std::basic_streambuf<char, std::char_traits<char> >::seekoff(long long, std::_Ios_Seekdir, std::_Ios_Openmode)'
+   SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb0EEE[_ZTVN4Rcpp10RstreambufILb0EEE]+0x38): undefined reference to `std::basic_streambuf<char, std::char_traits<char> >::seekpos(std::fpos<int>, std::_Ios_Openmode)'
+   SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb0EEE[_ZTVN4Rcpp10RstreambufILb0EEE]+0x50): undefined reference to `std::basic_streambuf<char, std::char_traits<char> >::xsgetn(char*, long long)'
+   SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb1EEE[_ZTVN4Rcpp10RstreambufILb1EEE]+0x28): undefined reference to `std::basic_streambuf<char, std::char_traits<char> >::setbuf(char*, long long)'
+   SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb1EEE[_ZTVN4Rcpp10RstreambufILb1EEE]+0x30): undefined reference to `std::basic_streambuf<char, std::char_traits<char> >::seekoff(long long, std::_Ios_Seekdir, std::_Ios_Openmode)'
+SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb1EEE[_ZTVN4Rcpp10RstreambufILb1EEE]+0x38): undefined reference to `std::basic_streambuf<ch     SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb1EEE[_ZTVN4Rcpp10RstreambufILb1EEE]+0x38): undefined reference to `std::basic_streambuf<char, std::char_traits<char> >::seekpos(std::fpos<int>, std::_Ios_Openmode)'
+   SLOPE.o:SLOPE.cpp:(.rdata$_ZTVN4Rcpp10RstreambufILb1EEE[_ZTVN4Rcpp10RstreambufILb1EEE]+0x50): undefined reference to `std::basic_streambuf<char, std::char_traits<char> >::xsgetn(char*, long long)'
+   SLOPE.o:SLOPE.cpp:(.xdata$_ZN4arma6newarp17UpperHessenbergQRIdE7computeERKNS_3MatIdEE+0x10): undefined reference to `__gxx_personality_seh0'
+   SLOPE.o:SLOPE.cpp:(.xdata$_ZN4arma6newarp17UpperHessenbergQRIdE9matrix_RQEv+0x10): undefined reference to `__gxx_personality_seh0'
+   collect2: error: ld returned 1 exit status
+     /usr/share/R/share/make/shlib.mk:6: recipe for target 'SLOPE.so' failed
+   make: *** [SLOPE.so] Error 1
+     ERROR: compilation failed for package ‘SLOPE’
+  ─  removing ‘/tmp/RtmprGyu0A/devtools_install_55b9752c30f/SLOPE’
+
+Error: 'col_ed' is not an exported object from 'namespace:cli'
+Execution halted
