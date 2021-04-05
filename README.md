@@ -19,4 +19,5 @@ Medium: Submit a pull request that fixes the issue at https://github.com/jolars/
 PR [#15](https://github.com/jolars/SLOPE/pull/15) submitted on 23 March.
 
 ### Test 5: 
-write an R package using RcppArmadillo (as a backend) that uses proximal gradient descent or ADMM to solve SLOPE-penalized ordinary least squares regression. Make use of the function to compute the proximal operator that you implemented in the previous test. Compare your results to the SLOPE package (and make sure they match). Put the package on github.
+write an R package using RcppArmadillo (as a backend) that uses proximal gradient descent or ADMM to solve SLOPE-penalized ordinary least squares regression. Make use of the function to compute the proximal operator that you implemented in the previous test. Compare your results to the SLOPE package (and make sure they match). Put the package on github.  
+Link to the package - https://github.com/kushagragpt99/ADMMSLOPE
